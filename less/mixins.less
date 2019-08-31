@@ -1,1 +1,33 @@
 // Mixins Here
+
+.flex-class(@f-direction: row; @j-content: center; @a-items: center) {
+	display: flex;
+	flex-direction: @f-direction;
+	justify-content: @j-content;
+	align-items: @a-items;
+}
+
+.button-class(@btn-height: 200px; @btn-width: 200px; @btn-bg-color: brown; @btn-color: black) {
+	height: @btn-height;
+	width: @btn-width;
+	background-color: @btn-bg-color;
+	color: @btn-color;
+	text-align: center;
+	border-radius: 10px;
+	.flex-class(@f-direction: row; @j-content: center; @a-items: center);
+	font-size: 2rem;
+
+}
+
+.fade-in(@duration: 1s; @interval: 0.5s) {
+	 animation: @duration fadein @interval forwards;
+	  opacity: 0;
+	  color: #fff;
+
+	@keyframes fadein {
+	  100% {
+	    opacity: 1;
+	    color: black;
+	  	}
+	  }
+} 
